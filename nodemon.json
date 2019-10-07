@@ -1,0 +1,8 @@
+{
+    "restartable": "rs",
+    "verbose": true,
+    "watch": [
+        "test/**/*.cs"
+    ],
+    "ext": "js,json,cs,ts,json"
+}

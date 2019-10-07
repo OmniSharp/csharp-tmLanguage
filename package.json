@@ -22,8 +22,10 @@
   "scripts": {
     "compile": "node ./node_modules/typescript/bin/tsc -p .",
     "watch": "node ./node_modules/typescript/bin/tsc -w -p .",
-    "test": "node ./node_modules/gulp/bin/gulp.js test",
-    "prepublish": "node ./node_modules/gulp/bin/gulp.js"
+    "test": "node ./node_modules/gulp/bin/gulp.js test && npm run tmgrammar",
+    "prepublish": "node ./node_modules/gulp/bin/gulp.js",
+    "tmgrammar": "npx vscode-tmgrammar-test -c -s source.cs -g grammars/csharp.tmLanguage -t \"test/**/*.cs\"",
+    "tmgrammar:watch": "nodemon --exec 'npx vscode-tmgrammar-test -c -s source.cs -g grammars/csharp.tmLanguage -t \"test/**/*.cs\"'"
   },
   "dependencies": {},
   "devDependencies": {
@@ -38,9 +40,11 @@
     "gulp-yaml": "^2.0.4",
     "js-yaml": "^3.13.1",
     "mocha": "^6.2.1",
+    "nodemon": "^1.19.3",
     "plist": "^3.0.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3",
-    "vscode-textmate": "^4.2.2"
+    "vscode-textmate": "^4.2.2",
+    "vscode-tmgrammar-test": "0.0.6"
   }
 }
